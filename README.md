@@ -1,0 +1,4 @@
+vgserfdemo
+==========
+
+Vagrant Serf Demo
