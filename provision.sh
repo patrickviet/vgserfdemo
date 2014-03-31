@@ -3,6 +3,7 @@
 # HOSTNAME
 echo $1 > /etc/hostname
 hostname $1
+echo 127.0.1.1 $1 >> /etc/hosts
 
 # APT IN GERMANY (update accordingly depending on where you are)
 sed -ie s/us.archive.ubuntu.com/de.archive.ubuntu.com/g /etc/apt/sources.list
