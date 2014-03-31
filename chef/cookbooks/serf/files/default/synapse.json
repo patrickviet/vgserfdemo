@@ -1,0 +1,1 @@
+{"event_handlers":["member-join,member-leave,member-failed,member-update=serf members -format json > /dev/shm/serf_members.json.$$ && mv /dev/shm/serf_members.json.$$ /dev/shm/serf_members.json"]}

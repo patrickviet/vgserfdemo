@@ -1,0 +1,12 @@
+#!/bin/bash
+
+<% if node.has_key? 'ec2' %>
+ip=`curl -s --connect-timeout 5 http://169.254.169.254/latest/meta-data/public-ipv4`
+
+if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+  echo {\"advertise\":\"$ip\"} > /etc/serf/publicv4.json
+fi
+<% end %>
+
+exec chpst -u smartstack /usr/local/bin/serf agent -config-dir=/etc/serf
+
