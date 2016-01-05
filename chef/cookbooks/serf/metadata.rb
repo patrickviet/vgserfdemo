@@ -1,2 +1,3 @@
+name 'serf'
 depends 'runit'
 
